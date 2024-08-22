@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using ProgrammingTest;
+using OfficeOpenXml;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Set the license context to non-commercial
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

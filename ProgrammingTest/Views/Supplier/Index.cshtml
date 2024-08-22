@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProgrammingTest.Models.Supplier>
+
+<h2>Suppliers</h2>
+
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New</a>
+    <a href="@Url.Action("Upload")" class="btn btn-secondary">Upload</a>
+    <a href="@Url.Action("Download")" class="btn btn-secondary">Download</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Supplier Code</th>
+            <th>Supplier Name</th>
+            <th>Address</th>
+            <th>Province</th>
+            <th>City</th>
+            <th>PIC</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SupplierCode</td>
+                <td>@item.SupplierName</td>
+                <td>@item.Address</td>
+                <td>@item.Province</td>
+                <td>@item.City</td>
+                <td>@item.PIC</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

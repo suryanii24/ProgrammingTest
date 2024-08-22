@@ -1,0 +1,40 @@
+﻿@model ProgrammingTest.Models.Supplier
+
+<h2>Edit Supplier</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="SupplierCode" class="control-label"></label>
+        <input asp-for="SupplierCode" class="form-control" />
+        <span asp-validation-for="SupplierCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SupplierName" class="control-label"></label>
+        <input asp-for="SupplierName" class="form-control" />
+        <span asp-validation-for="SupplierName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address" class="control-label"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Province" class="control-label"></label>
+        <input asp-for="Province" class="form-control" />
+        <span asp-validation-for="Province" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City" class="control-label"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PIC" class="control-label"></label>
+        <input asp-for="PIC" class="form-control" />
+        <span asp-validation-for="PIC" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>

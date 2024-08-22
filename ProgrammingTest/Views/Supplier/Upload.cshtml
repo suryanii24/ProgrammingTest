@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Upload Suppliers";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Upload Excel File</label>
+        <input type="file" name="file" id="file" class="form-control" />
+    </div>
+    <input type="submit" value="Upload" class="btn btn-primary" />
+</form>
